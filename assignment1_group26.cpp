@@ -19,4 +19,10 @@ int main(int argc, char* argv[])
 		cout << "Cannot open file " << file_name << endl;
 		return 0;
 	}
+	string line;
+	while (getline(infile, line)) {
+		cout << line << endl;
+	}
+	infile.close();
+	return 0;
 }
