@@ -4,8 +4,6 @@
 #include <math.h>
 using namespace std;
 
-//nhung cai funtion them nha
-
 double getSum(double* nums, int size)
 {
 	double sum = 0;
@@ -21,16 +19,6 @@ double getMean(double* nums, int size)
 	return sum / size;
 }
 
-// nums: list of numbers, size: number of numbers :))
-// run program in repl.it: click run -> ./main data.csv.
-bool fequal(double a, double b)
-{
-	double epsilon = 0.00001;
-	return abs(a - b) < epsilon;
-}
-
-
-// source: https://www.geeksforgeeks.org/merge-sort/
 void merge(double arr[], int l, int m, int r)
 {
 	int n1 = m - l + 1;
@@ -125,6 +113,7 @@ double getMedian(double* nums, int size)
 	}
 	return median;
 }
+
 // Assume that nums are already sorted
 string getModes(double* nums, int size)
 {
@@ -303,9 +292,12 @@ int main(int argc, char* argv[])
 		cout << "Cannot open file " << file_name << endl;
 		return 0;
 	}
+
+	// Initialize arrays with initial max size
 	int array_max_size = 5000;
 	double* arr_x = new double[array_max_size];
 	double* arr_y = new double[array_max_size];
+
 	int size = 0;
 	string line;
 	double x, y;
