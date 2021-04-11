@@ -61,8 +61,7 @@ void merge(double arr[], int l, int m, int r)
 		k++;
 	}
 
-	// Copy the remaining elements of
-	// L[], if there are any
+	// Copy the remaining elements of L[], if there are any
 	while (i < n1)
 	{
 		arr[k] = L[i];
@@ -70,8 +69,7 @@ void merge(double arr[], int l, int m, int r)
 		k++;
 	}
 
-	// Copy the remaining elements of
-	// R[], if there are any
+	// Copy the remaining elements of R[], if there are any
 	while (j < n2)
 	{
 		arr[k] = R[j];
@@ -83,9 +81,8 @@ void merge(double arr[], int l, int m, int r)
 	delete[] R;
 }
 
-// l is for left index and r is
-// right index of the sub-array
-// of arr to be sorted */
+// Source: https://www.geeksforgeeks.org/merge-sort/
+// l is for left index and r is right index of the sub-arrayof arr to be sorted 
 void mergeSort(double arr[], int l, int r)
 {
 	if (l >= r)
