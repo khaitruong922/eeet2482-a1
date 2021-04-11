@@ -106,11 +106,11 @@ double getMedian(double* nums, int size)
 // Assume that nums are already sorted
 string getModes(double* nums, int size)
 {
-	double* modes = new double[size + 1];
+	double* modes = new double[size];
 	int freq = 1;
 	int max_freq = 1;
 	int mode_i = 0;
-	for (int i = 0; i < size - 1; i++)
+	for (int i = 0; i < size; i++)
 	{
 		if (nums[i] == nums[i + 1])
 		{
@@ -132,17 +132,6 @@ string getModes(double* nums, int size)
 			freq = 1;
 		}
 	}
-	// Check if last number is not equal to the second last number
-	if (nums[size - 1] != nums[size - 2])
-	{
-		freq = 1;
-	}
-	// Only add the last number as mode if highest frequency is 1
-	if (freq == max_freq)
-	{
-		modes[mode_i] = nums[size - 1];
-		mode_i++;
-	}
 
 	string s = "{";
 	for (int i = 0; i < mode_i - 1; i++)
@@ -152,6 +141,7 @@ string getModes(double* nums, int size)
 	}
 	s += to_string(modes[mode_i - 1]);
 	s += "}";
+	delete[] modes;
 	return s;
 }
 
