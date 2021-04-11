@@ -101,17 +101,9 @@ void mergeSort(double arr[], int l, int r)
 // Assume that nums are already sorted
 double getMedian(double* nums, int size)
 {
-	double median;
-	mergeSort(nums, 0, size - 1);
-	if (size % 2 != 0)
-	{
-		median = nums[size / 2];
-	}
-	else
-	{
-		median = (nums[(size - 1) / 2] + nums[size / 2]) / 2;
-	}
-	return median;
+	if (size % 2 != 0) return nums[size / 2];
+
+	return (nums[(size - 1) / 2] + nums[size / 2]) / 2;
 }
 
 // Assume that nums are already sorted
@@ -255,7 +247,7 @@ double getPearsonCorrelationCoefficient(double* x, double* y, int size)
 		sum_x += x[i];
 		sum_y += y[i];
 		sum_xy += x[i] * y[i];
-		sqrsum_x += +x[i] * x[i];
+		sqrsum_x += x[i] * x[i];
 		sqrsum_y += y[i] * y[i];
 	}
 
