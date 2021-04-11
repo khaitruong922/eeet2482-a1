@@ -106,6 +106,8 @@ double getMedian(double* nums, int size)
 // Assume that nums are already sorted
 string getModes(double* nums, int size)
 {
+	if (size == 0) return "{}";
+	if (size == 1) return "{" + to_string(nums[0]) + "}";
 	double* modes = new double[size];
 	int freq = 1;
 	int max_freq = 1;
@@ -202,7 +204,7 @@ double getKurtosis(double* nums, int size)
 	double sum = 0;
 	double mean = getMean(nums, size);
 	double stdev = getStandardDeviation(nums, size);
-	double diff = 0; 
+	double diff = 0;
 	for (int i = 0; i < size; i++)
 	{
 		diff = (nums[i] - getMean(nums, size)) / stdev;
@@ -274,8 +276,8 @@ int main(int argc, char* argv[])
 
 	// Initialize arrays with initial max size
 	int array_max_size = 5000;
-	double* arr_x = new double[array_max_size];
-	double* arr_y = new double[array_max_size];
+	double* arr_x = new double[array_max_size] {};
+	double* arr_y = new double[array_max_size] {};
 
 	int size = 0;
 	string line;
