@@ -251,7 +251,7 @@ string getLinearRegressionEquation(double* x, double* y, int size)
 	double stdev_x = getStandardDeviation(x, size);
 	double stdev_y = getStandardDeviation(y, size);
 	double r = getPearsonCorrelationCoefficient(x, y, size);
-	double a = r * stdev_y - stdev_x;
+	double a = r * stdev_y / stdev_x;
 	double b = mean_y - a * mean_x;
 	string s = "y = " + to_string(a) + "x + " + to_string(b);
 	return s;
