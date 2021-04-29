@@ -192,7 +192,7 @@ double getSkewness(double* nums, int size)
 	double diff = 0;
 	for (int i = 0; i < size; i++)
 	{
-		diff = (nums[i] - getMean(nums, size)) / stdev;
+		diff = (nums[i] - mean) / stdev;
 		sum += diff * diff * diff;
 	}
 	double skewness = sum / size;
@@ -207,7 +207,7 @@ double getKurtosis(double* nums, int size)
 	double diff = 0;
 	for (int i = 0; i < size; i++)
 	{
-		diff = (nums[i] - getMean(nums, size)) / stdev;
+		diff = (nums[i] - mean) / stdev;
 		sum += diff * diff * diff * diff;
 	}
 	double kurtosis = sum / size - 3;
